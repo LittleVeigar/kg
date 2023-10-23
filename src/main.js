@@ -13,9 +13,13 @@ import router from './router'
 import 'aframe'
 import 'aframe-html-shader'
 import "./assets/aframe-environment-component.min.js"
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 
 const Vue = createApp(App);
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    Vue.component(key, component)
+}
 // 使用vuetify
 Vue.use(vuetify);
 Vue.use(ElementPlus);
